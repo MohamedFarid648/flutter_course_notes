@@ -1,5 +1,3 @@
-import 'dart:io';
-
 void main() {
   /*  How To solve the task?  */
   /*
