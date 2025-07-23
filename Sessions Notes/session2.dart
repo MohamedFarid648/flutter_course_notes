@@ -5,7 +5,10 @@ void main() {
   /*
   List: var x = ["mohamed","Ali"],,, print(x[0])
   Map(like class) : var x = {"title":"t1"},,, print(x["title"])
-  Ser : var x ={1,2,3}
+  Set : var x ={1,2,3}
+
+  convert list to set the convert set to list to remove similar data.
+  
 
   [] Square brackets
   {} Cearly brackets
