@@ -16,9 +16,27 @@ git log  =>  get history of commits with alot of details
 
 6. git checkout 99899  => 
 99899 is commitId
-return to specifiec commit
+switch to specifiec commit or branch
 
-7. git switch => go to other branches
+7. git switch branchName=> go to other branches
+
+8. git branch =>List branches
+git branch branchName=> Create Branch
+
+9.git checkout -b branchName 
+ git switch -c branchName
+=>create branch and go to it
+
+10. git checkout -b branchName commitId 
+ git switch -c branchName commitId
+ git branch branchName commitId
+=> create branch from specific commit and go to it
+
+11. git branch -d branchName =>Delete Branch (if it is merged)
+git branch -D branchName =>Force Delete Branch (if it isn't merged it will reject to delete it , so if you want to force it use -D )
+
+
+12-Branch Naming Conversion:
  */
 /********************************* */
 void main() {
