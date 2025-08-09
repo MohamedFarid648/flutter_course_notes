@@ -24,8 +24,8 @@ void main() {
 
   print("Enter Amount that you want to add it to your Balance:");
   bankAccount.deposit(double.parse(stdin.readLineSync()!));
-
   print("Your Balance now is: ${bankAccount.getBalance()}");
+
   print("Enter Amount that you want to withdraw it from your Balance:");
   bankAccount.withdraw(double.parse(stdin.readLineSync()!));
   print("Your Balance now is: ${bankAccount.getBalance()}");
