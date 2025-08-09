@@ -64,3 +64,14 @@ String removeLeadingTrailing(String input) {
   String? numberMatch = numberRegEx.stringMatch(input);
   return numberMatch != null ? numberMatch : "0";
 }
+
+String removeLeadingTrailing2(String n) {
+  // Remove leading and trailing zeros
+  double num = double.parse(n);
+  // Convert to string after removing leading and trailing zeros
+  if (num == num.toInt()) {
+    return num.toInt().toString();
+  }
+  // If it's not a whole number, return it as a string
+  return num.toString();
+}
