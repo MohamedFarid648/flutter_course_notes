@@ -37,6 +37,13 @@ git branch -D branchName =>Force Delete Branch (if it isn't merged it will rejec
 
 
 12-Branch Naming Conversion:
+branchName: task-myid
+fileName: the same
+git commit -m 'task6/myid:mymessage'
+
+13.git merge your-branch : merge between 2 branches (add updates from my-branch to main or any branch I already on it)
+
+14. git push origin mybranch (push mybranch and changes)
  */
 /********************************* */
 void main() {
