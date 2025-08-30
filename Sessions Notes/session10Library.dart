@@ -178,6 +178,14 @@ mixin Swimmable {
   }
 }
 
+mixin Walkable2 on Human {
+  //Can't use it in another class (just human and childern)
+  void walkAnotherWay() {
+    print("walkAnotherWay");
+  }
+}
+
 class Human with Swimmable, Walkable {}
+//class TryHuman with Walkable2{} // 'Walkable2' can't be mixed onto 'Object' because 'Object' doesn't implement 'Human'.
 
 // Swimmable(walk) will override Walkable(walk) because itwill have body and come second

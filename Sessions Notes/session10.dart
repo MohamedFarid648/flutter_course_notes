@@ -37,4 +37,14 @@ void main() {
   print(n.getValue());
 
   getData<Dog>(d);
+
+  //6. final,sealed
+
+  var successResult = Success<int, Exception>(10);
+  print(handleResult(successResult));
+
+  var failureResult = Failure<int, Exception>(
+    Exception("Something went wrong"),
+  );
+  print(handleResult(failureResult));
 }

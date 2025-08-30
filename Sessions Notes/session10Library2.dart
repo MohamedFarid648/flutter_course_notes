@@ -38,5 +38,35 @@ void getData<T extends Animal>(T animal) {
   animal.eat();
 }
 
-
 //6. Class Modifiers (final , sealed , base)
+
+//final (final version of class , can create object from it but can't extend from it in another library )
+
+/* sealed like abstract class , can't extend or implement from it in another library )
+
+powerfull like switch
+*/
+
+/*base class  should at least one class extend it ,, and this child should be (base,final,sealed) */
+sealed class Result<S, E extends Exception> {}
+
+class Success<S, E extends Exception> extends Result<S, E> {
+  final S value;
+  Success(this.value);
+}
+
+class Failure<S, E extends Exception> extends Result<S, E> {
+  final E exception;
+  Failure(this.exception);
+}
+
+String handleResult(Result<int, Exception> result) {
+  switch (result) {
+    case Success(value: final v):
+      return "Success: $v";
+    case Failure(
+      exception: final e,
+    ): // if you remove that you will give an error because Result class is sealed
+      return "Failure: $e";
+  }
+}
