@@ -50,7 +50,7 @@ void main() {
 
   *14.LayoutWidgets:
   *Container:has one child
-  Row
-  Column
+  *Row
+  *Column
    */
 }

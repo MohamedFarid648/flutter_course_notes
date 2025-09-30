@@ -1,6 +1,6 @@
 
   /*
-  *1. How to create page: (Imporrtant) 
+  *1. How to create page: (Important) 
   *1.Cut it to small pieces
   *2.Start with Padding or Margin (padding is perfect for all page)
   

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_flutter_project/home_page.dart';
+import 'package:new_flutter_project/widgets/app_counter.dart';
+import 'package:new_flutter_project/widgets/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -54,7 +56,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       //debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const AppCounter(), //const SplashScreen(), //const HomePage(),
     );
   }
 }
