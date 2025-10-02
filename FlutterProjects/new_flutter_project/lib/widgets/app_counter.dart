@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_flutter_project/config/routes/route_names.dart';
 
 class AppCounter extends StatefulWidget {
   const AppCounter({super.key});
@@ -10,6 +11,8 @@ class AppCounter extends StatefulWidget {
 //private class
 class _AppCounterState extends State<AppCounter> {
   int counter = 0;
+  SizedBox sizedBox = SizedBox(height: 12);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,6 +36,26 @@ class _AppCounterState extends State<AppCounter> {
           },
           color: Colors.blue,
           child: Text("Increment", style: TextStyle(color: Colors.white)),
+        ),
+
+        //Use container,image,... like button
+        // InkWell(
+        //   //or GestureDetector Widget
+        //   onTap: () => {counter++, setState(() {})},
+        //   child: Container(height: 100, width: 100, color: Colors.amber),
+        // ),
+        sizedBox,
+        MaterialButton(
+          onPressed: () => {
+            //Navigator.canPop(context)
+            Navigator.pushNamed(
+              context,
+              RouteNames.homeScreen,
+              arguments: "Mohamed from Counter",
+            ),
+          },
+          color: Colors.blue,
+          child: Text("Return To Home", style: TextStyle(color: Colors.white)),
         ),
       ],
     );

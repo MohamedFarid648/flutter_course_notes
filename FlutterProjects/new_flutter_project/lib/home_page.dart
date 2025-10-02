@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:new_flutter_project/config/routes/route_names.dart';
+import 'package:new_flutter_project/widgets/app_counter.dart';
 import 'package:new_flutter_project/widgets/app_description.dart';
 import 'package:new_flutter_project/widgets/app_features.dart';
 import 'package:new_flutter_project/widgets/app_reviews.dart';
 import 'package:new_flutter_project/widgets/app_title.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final String name;
+  const HomePage({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +31,22 @@ class HomePage extends StatelessWidget {
               sizedBox,
               //Features
               AppFeatures(),
+              sizedBox,
+              MaterialButton(
+                onPressed: () => {
+                  // Navigator.pushReplacement(
+                  //   //pushAndRemoveUntil , push , pushReplacement
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => const AppCounter()),
+                  // ),
+                  Navigator.pushNamed(context, RouteNames.counterScreen),
+                },
+                color: Colors.blue,
+                child: Text(
+                  "Go To Counter - $name",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ],
           ),
         ),

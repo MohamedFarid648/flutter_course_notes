@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:new_flutter_project/config/routes/route_names.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const sizedBox = SizedBox(height: 12);
+
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: DefaultTextStyle(
@@ -52,6 +55,21 @@ class SplashScreen extends StatelessWidget {
               //     ],
               //   ),
               // ),
+              sizedBox,
+              MaterialButton(
+                onPressed: () => {
+                  Navigator.pushNamed(
+                    context,
+                    RouteNames.homeScreen,
+                    arguments: "Mohamed",
+                  ),
+                },
+                color: const Color.fromARGB(255, 243, 33, 33),
+                child: Text(
+                  "Go To Home",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ],
           ),
         ),

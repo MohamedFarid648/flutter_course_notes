@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_flutter_project/home_page.dart';
-import 'package:new_flutter_project/widgets/app_counter.dart';
-import 'package:new_flutter_project/widgets/splash_screen.dart';
+import 'package:new_flutter_project/config/routes/route_handler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,8 +53,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      //debugShowCheckedModeBanner: false,
-      home: const AppCounter(), //const SplashScreen(), //const HomePage(),
+      debugShowCheckedModeBanner: false,
+      //new way to route
+      onGenerateRoute: RouteHandler.generateRoute,
+      //home:const HomePage(), //const AppCounter(), //const SplashScreen(), //const HomePage(),
+
+      //old way to route
+      /*initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(), //initial route
+        '/counter': (context) => const AppCounter(),
+        '/home': (context) => const HomePage(name: "Moahmed"),
+      },*/
     );
   }
 }
