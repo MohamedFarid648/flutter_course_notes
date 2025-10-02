@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:new_flutter_project/config/routes/route_names.dart';
 import 'package:new_flutter_project/home_page.dart';
 import 'package:new_flutter_project/widgets/app_counter.dart';
+import 'package:new_flutter_project/widgets/list_products.dart';
 import 'package:new_flutter_project/widgets/splash_screen.dart';
 
 class RouteHandler {
@@ -16,6 +17,8 @@ class RouteHandler {
         );
       case RouteNames.counterScreen:
         return MaterialPageRoute(builder: (context) => const AppCounter());
+      case RouteNames.productsScreen:
+        return MaterialPageRoute(builder: (context) => const ListProducts());
       default:
         return MaterialPageRoute(
           builder: (context) =>

@@ -62,3 +62,27 @@ When you go from (home) to (about), you should set untill condition otherwise it
     onGenerateRoute: RouteHandler.generateRoute,
 
  */
+
+/*
+*C. List Items
+
+*1.SingleChildCrollView: like window has single child (column,row) and this child has a lot of childern
+*Not good for display products,posts,...( use ListView for them)
+*Use it for form that you afraid of it go out of screen.
+
+
+*2. ListView :it has a lot of childern (scroll of items)
+ good for different items
+
+ *3. 
+ *ListView.builder(use column to set size box to seperate between items)
+  *ListView.seperated(for seperating between items):
+   *both of them for similar items (products, posts,...)
+ */
+
+/*
+*D.
+If you have column that has list view and other childern:
+* you sould set listview in sizedbox as its parent
+*or set it in expander (it will take the childern their size then take the other size for list view)
+ */

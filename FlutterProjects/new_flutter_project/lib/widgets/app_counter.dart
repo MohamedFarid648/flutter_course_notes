@@ -57,6 +57,15 @@ class _AppCounterState extends State<AppCounter> {
           color: Colors.blue,
           child: Text("Return To Home", style: TextStyle(color: Colors.white)),
         ),
+        sizedBox,
+        MaterialButton(
+          onPressed: () => {
+            //Navigator.canPop(context)
+            Navigator.pushNamed(context, RouteNames.productsScreen),
+          },
+          color: Colors.red,
+          child: Text("Go To Products", style: TextStyle(color: Colors.white)),
+        ),
       ],
     );
   }
