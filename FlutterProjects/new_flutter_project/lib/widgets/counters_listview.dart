@@ -11,6 +11,21 @@ class CountersListview extends StatefulWidget {
 
 class _CountersListviewState extends State<CountersListview> {
   int counterValue = 0;
+  // State variable to track the ID of the counter currently selected for action
+  int? _selectedCounterId;
+
+  // Function to remove the counter from the list
+  void _deleteCounter(int id) {
+    setState(() {
+      dummyCounters.removeWhere((c) => c.id == id);
+      _selectedCounterId = null; // Clear selection after deletion
+    });
+    // Optional: Show a confirmation message
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Counter deleted successfully!')),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     const sizedBox = SizedBox(height: 12);
@@ -43,11 +58,20 @@ class _CountersListviewState extends State<CountersListview> {
         itemBuilder: (context, index) {
           final counter = dummyCounters[index];
           final isEven = index % 2 == 0;
+          // Check if the current counter is the selected one
+          final bool isSelected = _selectedCounterId == counter.id;
+
           return Container(
             color: isEven
                 ? const Color.fromARGB(255, 107, 145, 175)
                 : const Color.fromARGB(255, 73, 137, 189),
             child: ListTile(
+              onTap: () => {
+                setState(() {
+                  //Toggle selection: if already selected, deselect (null); otherwise, select this one.
+                  _selectedCounterId = isSelected ? null : counter.id;
+                }),
+              },
               /*
                onPressed: incrementCount(counter, () {
                   setState(() {});
@@ -61,22 +85,35 @@ class _CountersListviewState extends State<CountersListview> {
 
                 The Solution
                */
-              leading: IconButton(
-                onPressed: () {
-                  incrementCount(counter, () {
-                    setState(() {});
-                  });
-                },
-                icon: Icon(Icons.add),
-              ),
-              trailing: IconButton(
-                onPressed: () {
-                  decrementCount(counter, () {
-                    setState(() {});
-                  });
-                },
-                icon: Icon(Icons.minimize),
-              ),
+              leading: isSelected
+                  ? null // No leading buttons when the delete icon is shown
+                  : IconButton(
+                      onPressed: () {
+                        incrementCount(counter, () {
+                          setState(() {});
+                        });
+                      },
+                      icon: Icon(Icons.add),
+                    ),
+
+              //Conditional Trailing Widget (Delete button or Minimize button)
+              trailing: isSelected
+                  ? IconButton(
+                      icon: const Icon(
+                        Icons.delete,
+                        color: Colors.redAccent,
+                        size: 30,
+                      ),
+                      onPressed: () => _deleteCounter(counter.id),
+                    )
+                  : IconButton(
+                      onPressed: () {
+                        decrementCount(counter, () {
+                          setState(() {});
+                        });
+                      },
+                      icon: Icon(Icons.minimize),
+                    ),
               title: Center(
                 child: Text(
                   counter.name,
