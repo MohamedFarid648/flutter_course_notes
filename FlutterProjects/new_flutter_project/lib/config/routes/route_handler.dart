@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:new_flutter_project/config/routes/route_names.dart';
 import 'package:new_flutter_project/home_page.dart';
 import 'package:new_flutter_project/widgets/app_counter.dart';
+import 'package:new_flutter_project/widgets/counter_form.dart';
+import 'package:new_flutter_project/widgets/counters_listview.dart';
+import 'package:new_flutter_project/widgets/gridview_products.dart';
 import 'package:new_flutter_project/widgets/list_products.dart';
+import 'package:new_flutter_project/widgets/product_form.dart';
 import 'package:new_flutter_project/widgets/splash_screen.dart';
 
 class RouteHandler {
@@ -19,6 +23,18 @@ class RouteHandler {
         return MaterialPageRoute(builder: (context) => const AppCounter());
       case RouteNames.productsScreen:
         return MaterialPageRoute(builder: (context) => const ListProducts());
+      case RouteNames.productsGridViewScreen:
+        return MaterialPageRoute(
+          builder: (context) => const GridviewProducts(),
+        );
+      case RouteNames.productFormScreen:
+        return MaterialPageRoute(builder: (context) => const ProductForm());
+      case RouteNames.countersScreen:
+        return MaterialPageRoute(
+          builder: (context) => const CountersListview(),
+        );
+      case RouteNames.counterFormScreen:
+        return MaterialPageRoute(builder: (context) => const CounterForm());
       default:
         return MaterialPageRoute(
           builder: (context) =>

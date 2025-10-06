@@ -13,6 +13,32 @@ class _AppCounterState extends State<AppCounter> {
   int counter = 0;
   SizedBox sizedBox = SizedBox(height: 12);
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     appBar: AppBar(title: Text("Counter Example")),
+  //     body: Center(
+  //       child: InkWell(
+  //         onTap: () {
+  //           setState(() {
+  //             counter++;
+  //           });
+  //         },
+  //         child: Container(
+  //           height: 100,
+  //           width: 100,
+  //           color: Colors.amber,
+  //           alignment: Alignment.center,
+  //           child: Text(
+  //             "$counter",
+  //             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,10 +65,24 @@ class _AppCounterState extends State<AppCounter> {
         ),
 
         //Use container,image,... like button
-        // InkWell(
-        //   //or GestureDetector Widget
-        //   onTap: () => {counter++, setState(() {})},
-        //   child: Container(height: 100, width: 100, color: Colors.amber),
+        // Center(
+        //   child:InkWell(
+        //   onTap: () {
+        //     setState(() {
+        //       counter++;
+        //     });
+        //   },
+        //   child: Container(
+        //     height: 100,
+        //     width: 100,
+        //     color: Colors.amber,
+        //     alignment: Alignment.center,
+        //     child: Text(
+        //       "$counter",
+        //       style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        //     ),
+        //   ),
+        // ) ,
         // ),
         sizedBox,
         MaterialButton(
@@ -65,6 +105,18 @@ class _AppCounterState extends State<AppCounter> {
           },
           color: Colors.red,
           child: Text("Go To Products", style: TextStyle(color: Colors.white)),
+        ),
+        sizedBox,
+        MaterialButton(
+          onPressed: () => {
+            //Navigator.canPop(context)
+            Navigator.pushNamed(context, RouteNames.productsGridViewScreen),
+          },
+          color: Colors.red,
+          child: Text(
+            "Go To Products GridView",
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       ],
     );

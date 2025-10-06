@@ -47,6 +47,17 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
+              sizedBox,
+              MaterialButton(
+                onPressed: () => {
+                  Navigator.pushNamed(context, RouteNames.countersScreen),
+                },
+                color: Colors.blue,
+                child: Text(
+                  "Counters List View",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ],
           ),
         ),

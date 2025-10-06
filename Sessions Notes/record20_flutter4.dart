@@ -78,6 +78,8 @@ When you go from (home) to (about), you should set untill condition otherwise it
  *ListView.builder(use column to set size box to seperate between items)
   *ListView.seperated(for seperating between items):
    *both of them for similar items (products, posts,...)
+
+   Note: any item builder will take context and return widget
  */
 
 /*
