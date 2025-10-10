@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:new_flutter_project/config/routes/route_names.dart';
 import 'package:new_flutter_project/home_page.dart';
 import 'package:new_flutter_project/widgets/app_counter.dart';
+import 'package:new_flutter_project/widgets/basketball_result.dart';
 import 'package:new_flutter_project/widgets/counter_form.dart';
 import 'package:new_flutter_project/widgets/counters_listview.dart';
 import 'package:new_flutter_project/widgets/gridview_products.dart';
@@ -35,6 +36,10 @@ class RouteHandler {
         );
       case RouteNames.counterFormScreen:
         return MaterialPageRoute(builder: (context) => const CounterForm());
+      case RouteNames.basketBallScreen:
+        return MaterialPageRoute(
+          builder: (context) => const BasketBallResult(),
+        );
       default:
         return MaterialPageRoute(
           builder: (context) =>

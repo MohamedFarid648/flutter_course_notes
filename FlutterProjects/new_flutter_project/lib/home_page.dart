@@ -58,6 +58,17 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
+              sizedBox,
+              MaterialButton(
+                onPressed: () => {
+                  Navigator.pushNamed(context, RouteNames.basketBallScreen),
+                },
+                color: Colors.blue,
+                child: Text(
+                  "BasketBall Result",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ],
           ),
         ),

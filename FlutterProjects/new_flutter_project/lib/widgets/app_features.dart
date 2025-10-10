@@ -11,21 +11,15 @@ class AppFeatures extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween, //vertical alignment
         children: [
           AppFeatureColumn(
-            columnFeatureText: "Book Review",
+            columnFeatureText: "Book",
             columnFeatureTime: "25 mins",
             icon: Icons.book,
           ),
 
           AppFeatureColumn(
-            columnFeatureText: "Clock Review",
+            columnFeatureText: "Clock",
             columnFeatureTime: "1 h",
             icon: Icons.watch,
-          ),
-
-          AppFeatureColumn(
-            columnFeatureText: "Food Review",
-            columnFeatureTime: "4-6 mins",
-            icon: Icons.food_bank,
           ),
         ],
       ),

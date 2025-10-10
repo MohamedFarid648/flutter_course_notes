@@ -7,4 +7,5 @@ class RouteNames {
   static const String productFormScreen = "/product_form";
   static const String counterFormScreen = "/counter_form";
   static const String countersScreen = "/counters";
+  static const String basketBallScreen = "/basketball_result";
 }
