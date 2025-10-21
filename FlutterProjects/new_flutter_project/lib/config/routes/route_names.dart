@@ -9,4 +9,5 @@ class RouteNames {
   static const String countersScreen = "/counters";
   static const String basketBallScreen = "/basketball_result";
   static const String globalCounterScreen = "/global_counter";
+  static const String animationScreen = "/animation";
 }

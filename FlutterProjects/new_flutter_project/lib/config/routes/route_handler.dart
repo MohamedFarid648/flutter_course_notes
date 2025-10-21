@@ -10,6 +10,7 @@ import 'package:new_flutter_project/widgets/gridview_products.dart';
 import 'package:new_flutter_project/widgets/list_products.dart';
 import 'package:new_flutter_project/widgets/product_form.dart';
 import 'package:new_flutter_project/widgets/splash_screen.dart';
+import 'package:new_flutter_project/widgets/animation_features.dart';
 
 class RouteHandler {
   static Route generateRoute(RouteSettings routeSettings) {
@@ -43,6 +44,9 @@ class RouteHandler {
         );
       case RouteNames.globalCounterScreen:
         return MaterialPageRoute(builder: (context) => GlobalKeyCounter());
+
+      case RouteNames.animationScreen:
+        return MaterialPageRoute(builder: (context) => AnimationFeatures());
       default:
         return MaterialPageRoute(
           builder: (context) =>

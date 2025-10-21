@@ -72,16 +72,23 @@ class HomePage extends StatelessWidget {
               sizedBox,
               MaterialButton(
                 onPressed: () => {
-                  // Navigator.pushReplacement(
-                  //   //pushAndRemoveUntil , push , pushReplacement
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => const AppCounter()),
-                  // ),
                   Navigator.pushNamed(context, RouteNames.counterScreen),
                 },
                 color: Colors.blue,
                 child: Text(
                   "Go To Counter - $name",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+
+              sizedBox,
+              MaterialButton(
+                onPressed: () => {
+                  Navigator.pushNamed(context, RouteNames.animationScreen),
+                },
+                color: Colors.blue,
+                child: Text(
+                  "Go To Animation",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
