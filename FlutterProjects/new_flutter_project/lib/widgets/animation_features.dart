@@ -7,10 +7,45 @@ class AnimationFeatures extends StatefulWidget {
   State<AnimationFeatures> createState() => _AnimationFeaturesState();
 }
 
-class _AnimationFeaturesState extends State<AnimationFeatures> {
+class _AnimationFeaturesState extends State<AnimationFeatures>
+    with SingleTickerProviderStateMixin {
   Color boxColor = Colors.red;
   double boxRadius = 0;
   bool toggleBoxes = true;
+  //
+  late AnimationController _animationController;
+  late Animation _animation;
+  String name = "";
+
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this, //AnimatedGridState(),
+      duration: Duration(seconds: 5),
+    );
+    _animation = Tween<double>(
+      begin: 50.0,
+      end: 100.0,
+    ).animate(_animationController);
+
+    _animation
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          print('Animation Finished');
+        }
+        print(status);
+      })
+      ..addListener(
+        () {
+          setState(() {
+            name = "Flutter ${_animation.value.toInt()}";
+          });
+        },
+      ); // = _animation.addStatusListener(listener); _animation.addListener(listener)
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     var sizedBox = SizedBox(height: 20);
@@ -44,6 +79,17 @@ class _AnimationFeaturesState extends State<AnimationFeatures> {
             ),
           ),
           sizedBox,
+          OutlinedButton(
+            onPressed: () {
+              setState(() {
+                boxColor = Colors.green;
+                boxRadius = 50;
+              });
+            },
+            child: Text("Show Animation"),
+          ),
+
+          sizedBox,
           //AnimatedCrossFade: has 2 childern to swap between
           Center(
             child: AnimatedCrossFade(
@@ -72,21 +118,26 @@ class _AnimationFeaturesState extends State<AnimationFeatures> {
           OutlinedButton(
             onPressed: () {
               setState(() {
-                boxColor = Colors.green;
-                boxRadius = 50;
+                toggleBoxes = !toggleBoxes;
               });
             },
-            child: Text("Show Animation"),
+            child: Text("Show Animated Cross Fade Changes"),
+          ),
+
+          sizedBox,
+          Center(
+            child: Text(name, style: TextStyle(fontSize: _animation.value)),
           ),
 
           sizedBox,
           OutlinedButton(
             onPressed: () {
               setState(() {
-                toggleBoxes = !toggleBoxes;
+                _animationController.reset();
+                _animationController.forward();
               });
             },
-            child: Text("Show Animated Cross Fade Changes"),
+            child: Text("Show Animation Controll Forward"),
           ),
         ],
       ),
