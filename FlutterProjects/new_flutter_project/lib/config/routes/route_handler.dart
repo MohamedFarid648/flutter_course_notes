@@ -8,6 +8,7 @@ import 'package:new_flutter_project/widgets/counters_listview.dart';
 import 'package:new_flutter_project/widgets/global_key_counter.dart';
 import 'package:new_flutter_project/widgets/gridview_products.dart';
 import 'package:new_flutter_project/widgets/list_products.dart';
+import 'package:new_flutter_project/widgets/page_view_custom.dart';
 import 'package:new_flutter_project/widgets/product_form.dart';
 import 'package:new_flutter_project/widgets/splash_screen.dart';
 import 'package:new_flutter_project/widgets/animation_features.dart';
@@ -38,6 +39,9 @@ class RouteHandler {
         );
       case RouteNames.counterFormScreen:
         return MaterialPageRoute(builder: (context) => const CounterForm());
+
+      case RouteNames.pageViewScreen:
+        return MaterialPageRoute(builder: (context) => const PageViewCustom());
       case RouteNames.basketBallScreen:
         return MaterialPageRoute(
           builder: (context) => const BasketBallResult(),

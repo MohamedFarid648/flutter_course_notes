@@ -10,4 +10,5 @@ class RouteNames {
   static const String basketBallScreen = "/basketball_result";
   static const String globalCounterScreen = "/global_counter";
   static const String animationScreen = "/animation";
+  static const String pageViewScreen = "/page_view";
 }

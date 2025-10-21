@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_flutter_project/widgets/app_bar_custom.dart';
 import 'package:new_flutter_project/widgets/global_counter.dart';
 
 class GlobalKeyCounter extends StatelessWidget {
@@ -10,8 +11,7 @@ class GlobalKeyCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Counter App")),
-
+      appBar: AppBarCustom(title: "Counter App"),
       body: Center(child: GlobalCounter(key: counterKey)),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {counterKey.currentState?.incrementCounter()},

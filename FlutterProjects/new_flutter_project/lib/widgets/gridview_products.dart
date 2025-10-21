@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_flutter_project/config/routes/route_names.dart';
 import 'package:new_flutter_project/data/product.dart';
+import 'package:new_flutter_project/widgets/app_bar_custom.dart';
 
 class GridviewProducts extends StatelessWidget {
   const GridviewProducts({super.key});
@@ -10,13 +11,7 @@ class GridviewProducts extends StatelessWidget {
     const sizedBox = SizedBox(height: 12);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Products"),
-        centerTitle: true,
-        leading: Icon(Icons.book),
-        backgroundColor: Colors.blueAccent,
-        actions: [],
-      ),
+      appBar: AppBarCustom(title: "Products"),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushNamed(context, RouteNames.productFormScreen);

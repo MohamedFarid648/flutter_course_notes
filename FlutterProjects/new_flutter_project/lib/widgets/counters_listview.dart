@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_flutter_project/config/routes/route_names.dart';
 import 'package:new_flutter_project/data/counters.dart';
+import 'package:new_flutter_project/widgets/app_bar_custom.dart';
 
 class CountersListview extends StatefulWidget {
   const CountersListview({super.key});
@@ -31,13 +32,7 @@ class _CountersListviewState extends State<CountersListview> {
     const sizedBox = SizedBox(height: 12);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Counters"),
-        centerTitle: true,
-        //leading: Icon(Icons.countertops),
-        backgroundColor: Colors.blueAccent,
-        actions: [],
-      ),
+      appBar: AppBarCustom(title: "Counters"),
       floatingActionButton: FloatingActionButton(
         // onPressed: () {
         //   Navigator.pushNamed(context, RouteNames.counterFormScreen);

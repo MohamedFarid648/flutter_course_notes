@@ -92,6 +92,18 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
+
+              sizedBox,
+              MaterialButton(
+                onPressed: () => {
+                  Navigator.pushNamed(context, RouteNames.pageViewScreen),
+                },
+                color: Colors.blue,
+                child: Text(
+                  "Go To Page View",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ],
           ),
         ),

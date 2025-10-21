@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:new_flutter_project/data/counters.dart';
+import 'package:new_flutter_project/widgets/app_bar_custom.dart';
 
 class CounterForm extends StatefulWidget {
   const CounterForm({super.key});
@@ -33,13 +34,7 @@ class _CounterFormState extends State<CounterForm> {
     const sizedBox = SizedBox(height: 12);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Counter Form"),
-        centerTitle: true,
-        //leading: Icon(Icons.countertops),
-        backgroundColor: Colors.blueAccent,
-        actions: [],
-      ),
+      appBar: AppBarCustom(title: "Counter Form"),
       body: SingleChildScrollView(
         child: Column(
           children: [

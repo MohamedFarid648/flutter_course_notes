@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_flutter_project/widgets/app_bar_custom.dart';
 
 class AnimationFeatures extends StatefulWidget {
   const AnimationFeatures({super.key});
@@ -50,13 +51,7 @@ class _AnimationFeaturesState extends State<AnimationFeatures>
   Widget build(BuildContext context) {
     var sizedBox = SizedBox(height: 20);
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Animation"),
-        centerTitle: true,
-        //leading: Icon(Icons.countertops),
-        backgroundColor: Colors.blueAccent,
-        actions: [],
-      ),
+      appBar: AppBarCustom(title: "Animation"),
       body: ListView(
         children: [
           sizedBox,

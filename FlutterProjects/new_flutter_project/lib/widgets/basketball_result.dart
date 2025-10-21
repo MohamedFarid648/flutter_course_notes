@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_flutter_project/data/Score.dart';
+import 'package:new_flutter_project/widgets/app_bar_custom.dart';
 
 class BasketBallResult extends StatefulWidget {
   const BasketBallResult({super.key});
@@ -13,13 +14,7 @@ class _BasketBallResultState extends State<BasketBallResult> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Basket Ball Result"),
-        centerTitle: true,
-        //leading: Icon(Icons.countertops),
-        backgroundColor: Colors.amber,
-        actions: [],
-      ),
+      appBar: AppBarCustom(title: "Basket Ball Result", bgColor: Colors.amber),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
