@@ -21,5 +21,19 @@
 /*
 *C.Auto Responsive from flutter
 *you can use package:flutter_screenutil
+*sw-> screen width
 
+ */
+
+/*
+*D. Slider: PageView has childern(slides)
+*you can change it when click button:
+    *change physics:NeverScrol...() ,,(you can do the samefor grid view,list view to prevent scrolling )
+    *use controller:your controller,, in opPressed use yourController.nextPage()
+*use CircularProgressIndicator() for loading,, use value to show progress instead of loading
+
+ */
+/*
+*E.Stack Widget:
+*Widgets above them
  */

@@ -5,6 +5,7 @@ import 'package:new_flutter_project/widgets/app_counter.dart';
 import 'package:new_flutter_project/widgets/basketball_result.dart';
 import 'package:new_flutter_project/widgets/counter_form.dart';
 import 'package:new_flutter_project/widgets/counters_listview.dart';
+import 'package:new_flutter_project/widgets/global_key_counter.dart';
 import 'package:new_flutter_project/widgets/gridview_products.dart';
 import 'package:new_flutter_project/widgets/list_products.dart';
 import 'package:new_flutter_project/widgets/product_form.dart';
@@ -40,6 +41,8 @@ class RouteHandler {
         return MaterialPageRoute(
           builder: (context) => const BasketBallResult(),
         );
+      case RouteNames.globalCounterScreen:
+        return MaterialPageRoute(builder: (context) => GlobalKeyCounter());
       default:
         return MaterialPageRoute(
           builder: (context) =>

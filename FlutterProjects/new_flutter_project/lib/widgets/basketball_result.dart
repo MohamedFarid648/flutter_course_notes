@@ -25,7 +25,7 @@ class _BasketBallResultState extends State<BasketBallResult> {
         children: [
           Expanded(flex: 2, child: Container()),
           Expanded(
-            flex: 8,
+            flex: 12,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -37,7 +37,7 @@ class _BasketBallResultState extends State<BasketBallResult> {
           ),
 
           Expanded(
-            flex: 4,
+            flex: 3,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               //mainAxisSize: MainAxisSize.min,
@@ -58,31 +58,49 @@ class _BasketBallResultState extends State<BasketBallResult> {
     return Column(
       children: [
         Expanded(
-          flex: 8,
+          flex: 4,
           child: Column(
             children: [
               Text(
                 teamName,
-                style: TextStyle(fontSize: 32, color: Colors.amber),
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.amber,
+                ),
               ),
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 4,
+          child: Column(
+            children: [
               Text(
                 score.value.toString(),
-                style: TextStyle(fontSize: 32, color: Colors.amber),
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.amber,
+                ),
               ),
             ],
           ),
         ),
 
         Expanded(
-          flex: 4,
+          flex: 3,
           child: Column(
             children: [
               addPointsBtn(() {
                 score.value++;
               }, "Add 1 Point"),
+              SizedBox(height: 10),
               addPointsBtn(() {
                 score.value += 2;
               }, "Add 2 Point"),
+              SizedBox(height: 10),
+
               addPointsBtn(() {
                 score.value += 3;
               }, "Add 3 Point"),

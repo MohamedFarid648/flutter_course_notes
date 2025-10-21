@@ -21,33 +21,17 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               //title
-              AppTitle(),
-              sizedBox,
+              //AppTitle(),
+              //sizedBox,
               //description
-              AppDescription(),
-              sizedBox,
+              //AppDescription(),
+              //sizedBox,
               //Stars
-              AppReviews(),
-              sizedBox,
+              //AppReviews(),
+              //sizedBox,
               //Features
-              AppFeatures(),
-              sizedBox,
-              MaterialButton(
-                onPressed: () => {
-                  // Navigator.pushReplacement(
-                  //   //pushAndRemoveUntil , push , pushReplacement
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => const AppCounter()),
-                  // ),
-                  Navigator.pushNamed(context, RouteNames.counterScreen),
-                },
-                color: Colors.blue,
-                child: Text(
-                  "Go To Counter - $name",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              sizedBox,
+              //AppFeatures(),
+              //sizedBox,
               MaterialButton(
                 onPressed: () => {
                   Navigator.pushNamed(context, RouteNames.countersScreen),
@@ -66,6 +50,38 @@ class HomePage extends StatelessWidget {
                 color: Colors.blue,
                 child: Text(
                   "BasketBall Result",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              sizedBox,
+              MaterialButton(
+                onPressed: () => {
+                  // Navigator.pushReplacement(
+                  //   //pushAndRemoveUntil , push , pushReplacement
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => const AppCounter()),
+                  // ),
+                  Navigator.pushNamed(context, RouteNames.globalCounterScreen),
+                },
+                color: Colors.blue,
+                child: Text(
+                  "Go To Global Counter Key",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              sizedBox,
+              MaterialButton(
+                onPressed: () => {
+                  // Navigator.pushReplacement(
+                  //   //pushAndRemoveUntil , push , pushReplacement
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => const AppCounter()),
+                  // ),
+                  Navigator.pushNamed(context, RouteNames.counterScreen),
+                },
+                color: Colors.blue,
+                child: Text(
+                  "Go To Counter - $name",
                   style: TextStyle(color: Colors.white),
                 ),
               ),

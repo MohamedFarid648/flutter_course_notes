@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:new_flutter_project/config/routes/route_handler.dart';
 
 void main() {
-  //runApp(const MyApp());
-  DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) => MyApp(), // Wrap your app
-  );
+  runApp(const MyApp());
+  // DevicePreview(
+  //   enabled: !kReleaseMode,
+  //   builder: (context) => MyApp(), // Wrap your app
+  // );
 }
 
 //runApp(); take parameter(order,required) from Widget Class
