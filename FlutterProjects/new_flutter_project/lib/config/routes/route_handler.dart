@@ -17,7 +17,9 @@ class RouteHandler {
   static Route generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case RouteNames.splashScreen:
-        return MaterialPageRoute(builder: (context) => const SplashScreen());
+        return MaterialPageRoute(
+          builder: (context) => const BasketBallResult(),
+        );
       case RouteNames.homeScreen:
         var userName = routeSettings.arguments as String;
         return MaterialPageRoute(
