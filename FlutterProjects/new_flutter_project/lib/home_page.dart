@@ -104,6 +104,18 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
+
+              sizedBox,
+              MaterialButton(
+                onPressed: () => {
+                  Navigator.pushNamed(context, RouteNames.cubitBlocScreen),
+                },
+                color: Colors.blue,
+                child: Text(
+                  "Go To Cubit/Bloc",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ],
           ),
         ),

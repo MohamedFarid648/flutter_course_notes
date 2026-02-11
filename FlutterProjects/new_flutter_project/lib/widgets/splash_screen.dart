@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_flutter_project/config/routes/route_names.dart';
 
 class SplashScreen extends StatelessWidget {

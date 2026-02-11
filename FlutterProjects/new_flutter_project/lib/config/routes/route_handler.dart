@@ -3,6 +3,7 @@ import 'package:new_flutter_project/config/routes/route_names.dart';
 import 'package:new_flutter_project/home_page.dart';
 import 'package:new_flutter_project/widgets/app_counter.dart';
 import 'package:new_flutter_project/widgets/basketball_result.dart';
+import 'package:new_flutter_project/widgets/counter_bloc_cubit_page.dart';
 import 'package:new_flutter_project/widgets/counter_form.dart';
 import 'package:new_flutter_project/widgets/counters_listview.dart';
 import 'package:new_flutter_project/widgets/global_key_counter.dart';
@@ -10,15 +11,17 @@ import 'package:new_flutter_project/widgets/gridview_products.dart';
 import 'package:new_flutter_project/widgets/list_products.dart';
 import 'package:new_flutter_project/widgets/page_view_custom.dart';
 import 'package:new_flutter_project/widgets/product_form.dart';
-import 'package:new_flutter_project/widgets/splash_screen.dart';
 import 'package:new_flutter_project/widgets/animation_features.dart';
+import 'package:new_flutter_project/widgets/splash_screen.dart';
 
 class RouteHandler {
   static Route generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case RouteNames.splashScreen:
+        return MaterialPageRoute(builder: (context) => const SplashScreen());
+      case RouteNames.cubitBlocScreen:
         return MaterialPageRoute(
-          builder: (context) => const BasketBallResult(),
+          builder: (context) => const CounterBlocCubitPage(),
         );
       case RouteNames.homeScreen:
         var userName = routeSettings.arguments as String;
